@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xiaolei.ringprogressbar.MainActivity">
+
+    <com.xiaolei.ringprogressbar.RingProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#bbbbbb"
+        
+        app:circlePadding="15dp"
+        app:downPaintWidth="10dp"
+        app:isInverse="false"
+        app:maxValue="10"
+        app:pointWidth="30"
+        app:progressValue="4"
+        app:startAngle="90"
+        app:upPaintWidth="15dp"/>
+
+</RelativeLayout>
