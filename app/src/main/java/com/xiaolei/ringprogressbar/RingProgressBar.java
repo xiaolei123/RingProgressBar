@@ -33,9 +33,7 @@ public class RingProgressBar extends View
     private
     @ColorInt
     int pointColor = Color.WHITE;
-    private
-    @ColorInt
-    int pointWidth = 2;
+    private int pointWidth = 2;
     private boolean isScrolling = false;
     private Handler handler;
     private int sweepAngle = 0;
@@ -84,7 +82,7 @@ public class RingProgressBar extends View
         progressValue = array.getInt(R.styleable.RingProgressBar_progressValue, 50);
 
         pointColor = array.getColor(R.styleable.RingProgressBar_pointColor, Color.WHITE);
-        pointWidth = array.getInt(R.styleable.RingProgressBar_pointWidth, upPaintWidth / 2);
+        pointWidth = array.getDimensionPixelSize(R.styleable.RingProgressBar_pointWidth,upPaintWidth / 2);
 
         isInverse = array.getBoolean(R.styleable.RingProgressBar_isInverse, false);
         array.recycle();
@@ -99,7 +97,7 @@ public class RingProgressBar extends View
         centerRectf = getCenterRectF(width, height, downPaintWidth, padding);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
-
+    
     private RectF getCenterRectF(int width, int height, int paintWidth, int padding)
     {
         paintWidth = paintWidth / 2;
@@ -154,6 +152,7 @@ public class RingProgressBar extends View
     public void setMaxValue(int maxValue)
     {
         this.maxValue = maxValue;
+        sweepAngle = (int) ((float) progressValue / maxValue * 360);
         handler.sendEmptyMessage(0);
     }
 
@@ -170,6 +169,7 @@ public class RingProgressBar extends View
     public void setProgressValue(int progressValue)
     {
         this.progressValue = progressValue;
+        sweepAngle = (int) ((float) progressValue / maxValue * 360);
         handler.sendEmptyMessage(0);
     }
 

@@ -20,7 +20,7 @@
         <!--小圆点颜色，不写默认是上层画笔宽度的一半-->
         <attr name="pointColor" format="color"/>
         <!--小圆点宽度-->
-        <attr name="pointWidth" format="integer"/>
+        <attr name="pointWidth" format="dimension"/>
         <!--是否反转-->
         <attr name="isInverse" format="boolean"/>
     </declare-styleable>

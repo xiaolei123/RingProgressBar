@@ -6,7 +6,6 @@ import android.view.View;
 
 public class MainActivity extends Activity
 {
- 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -18,9 +17,9 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View view)
             {
+                progress.setMaxValue(200);
                 progress.autoScrllo(500);
             }
         });
     }
-    
 }
